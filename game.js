@@ -62,6 +62,12 @@ function publishResult(player, ai, result) {
 
 }
 
+function endGame() {
+    document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
+    game.playerHand = "";
+    game.aiHand = "";
+}
+
 //funkcja sterująca
 function startGame() {
     if (!game.playerHand) return alert("Wybierz dłoń!!")
@@ -69,7 +75,10 @@ function startGame() {
     game.aiHand = aiChoise();
     const gameResult = checkResult(game.playerHand, game.aiHand);
     publishResult(game.playerHand, game.aiHand, gameResult)
+    endGame()
 }
+
+
 
 hands.forEach(hand => hand.addEventListener('click', handSelection))
 
