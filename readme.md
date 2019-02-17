@@ -1,11 +1,11 @@
-#Rock-Paper-Scizors Game
+# Rock-Paper-Scizors Game
 
-##Description
+## Description
 
 This is a Rock-Paper-Scizors Game, created for exercises with course javascript. Uses function and objects.
 
 
-##Used languages
+## Used languages
 
 The game is writed in:
 - JavaScript, 
