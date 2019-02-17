@@ -26,12 +26,25 @@ function aiChoise() {
     return aiHand;
 }
 
+
+//Funkcja sprawdzająca wybór
+function checkResult(player, ai) {
+    if (player === ai) {
+        return "draw"
+    } else if ((player === "papier" && ai === "kamień") || (player === "kamień" && ai === "nożyczki") || (player === "nożyczki" && ai === "papier")) {
+        return "win"
+    } else {
+        return "loss";
+    }
+}
+
+
 //funkcja sterująca
 function startGame() {
     if (!game.playerHand) return alert("Wybierz dłoń!!")
 
     game.aiHand = aiChoise();
-
+    const gameResult = checkResult(game.playerHand, game.aiHand);
 }
 
 hands.forEach(hand => hand.addEventListener('click', handSelection))
