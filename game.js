@@ -10,7 +10,7 @@ const game = {
     aiHand: "",
 }
 
-const hands = [...document.querySelectorAll('.select img')];
+const hands = [...document.querySelectorAll('.game__select .game__image')];
 
 //Pierwsza funkcja
 function handSelection() {
@@ -41,23 +41,23 @@ function checkResult(player, ai) {
 //Publikacja wyniku
 
 function publishResult(player, ai, result) {
-    document.querySelector('[data-summary="your-choice"]').textContent = player;
-    document.querySelector('[data-summary="ai-choice"]').textContent = ai;
+    document.querySelector('[data-summary="your__choice"]').textContent = player;
+    document.querySelector('[data-summary="ai__choice"]').textContent = ai;
 
     document.querySelector('p.numbers span').textContent = ++gameSummary.numbers;
 
     if (result === "win") {
         document.querySelector('p.wins span').textContent = ++gameSummary.wins;
-        document.querySelector('[data-summary="who-win"]').textContent = "Ty wygrałeś!";
-        document.querySelector('[data-summary="who-win"]').style.color = "green";
+        document.querySelector('[data-summary="who__win"]').textContent = "Ty wygrałeś!";
+        document.querySelector('[data-summary="who__win"]').style.color = "green";
     } else if (result === "lose") {
         document.querySelector('p.losses span').textContent = ++gameSummary.losses;
-        document.querySelector('[data-summary="who-win"]').textContent = "Komputer wygrał ;(";
-        document.querySelector('[data-summary="who-win"]').style.color = "red";
+        document.querySelector('[data-summary="who__win"]').textContent = "Komputer wygrał ;(";
+        document.querySelector('[data-summary="who__win"]').style.color = "red";
     } else {
         document.querySelector('p.draws span').textContent = ++gameSummary.draws;
-        document.querySelector('[data-summary="who-win"]').textContent = "Remis :\\";
-        document.querySelector('[data-summary="who-win"]').style.color = "gray";
+        document.querySelector('[data-summary="who__win"]').textContent = "Remis :\\";
+        document.querySelector('[data-summary="who__win"]').style.color = "gray";
     }
 
 }
