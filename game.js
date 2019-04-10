@@ -44,23 +44,38 @@ function publishResult(player, ai, result) {
     document.querySelector('[data-summary="your__choice"]').textContent = player;
     document.querySelector('[data-summary="ai__choice"]').textContent = ai;
 
-    document.querySelector('p.numbers span').textContent = ++gameSummary.numbers;
+    document.querySelector('.panel__numbers .panel__span').textContent = ++gameSummary.numbers;
 
     if (result === "win") {
-        document.querySelector('p.wins span').textContent = ++gameSummary.wins;
-        document.querySelector('[data-summary="who__win"]').textContent = "Ty wygrałeś!";
+        document.querySelector('.panel__wins .panel__span').textContent = ++gameSummary.wins;
+        document.querySelector('[data-summary="who__win"]').textContent = "Wygrałeś!";
         document.querySelector('[data-summary="who__win"]').style.color = "green";
+        resultGame();
     } else if (result === "lose") {
-        document.querySelector('p.losses span').textContent = ++gameSummary.losses;
-        document.querySelector('[data-summary="who__win"]').textContent = "Komputer wygrał ;(";
+        document.querySelector('.panel__losses .panel__span').textContent = ++gameSummary.losses;
+        document.querySelector('[data-summary="who__win"]').textContent = "Przegrałeś ;(";
         document.querySelector('[data-summary="who__win"]').style.color = "red";
+        resultGame();
     } else {
-        document.querySelector('p.draws span').textContent = ++gameSummary.draws;
+        document.querySelector('.panel__draws .panel__span').textContent = ++gameSummary.draws;
         document.querySelector('[data-summary="who__win"]').textContent = "Remis :\\";
         document.querySelector('[data-summary="who__win"]').style.color = "gray";
+        resultGame();
     }
 
 }
+
+// wyświetlenie wyniku
+function btnResultGame() {
+    document.querySelector('.game__start--result').style.display = "none";
+    document.querySelector('.game__result').style.display = "none";
+}
+
+function resultGame() {
+    document.querySelector('.game__start--result').style.display = "block";
+    document.querySelector('.game__result').style.display = "block";
+}
+
 
 function endGame() {
     document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = "";
@@ -82,4 +97,5 @@ function startGame() {
 
 hands.forEach(hand => hand.addEventListener('click', handSelection))
 
-document.querySelector('.start').addEventListener('click', startGame)
+document.querySelector('.game__start').addEventListener('click', startGame)
+document.querySelector('.game__start--result').addEventListener('click', btnResultGame)
