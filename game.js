@@ -16,7 +16,7 @@ const hands = [...document.querySelectorAll('.game__select .game__image')];
 function handSelection() {
     game.playerHand = this.dataset.option;
     hands.forEach(hand => hand.style.boxShadow = '');
-    this.style.boxShadow = '0 0 0 4px red';
+    this.style.boxShadow = '0 0 4px 4px red';
 }
 
 //Funkcja wyboru ai
@@ -69,11 +69,23 @@ function publishResult(player, ai, result) {
 function btnResultGame() {
     document.querySelector('.game__start--result').style.display = "none";
     document.querySelector('.game__result').style.display = "none";
+    document.querySelector('.result__wrapper').style.display = "none";
+}
+//klawisz Esc
+document.onkeyup = function (event) {
+    if (event.key === "Escape") {
+        btnResultGame();
+    }
 }
 
+
+
+//wyświetlenie wyniku
 function resultGame() {
     document.querySelector('.game__start--result').style.display = "block";
+    document.querySelector('.result__wrapper').style.display = "block";
     document.querySelector('.game__result').style.display = "block";
+
 }
 
 

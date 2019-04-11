@@ -24,24 +24,29 @@
         </section>
 
         <button class="game__start">Let's play!</button>
+        <div class="panel__wrapper">
+            <section class="panel panel__left">
+                <h3 class="game__header game__header--small">Wyniki gry</h3>
+                <p>Twój wybór: <span data-summary="your__choice" class="panel__span"></span></p>
+                <p>Wybór komputera: <span data-summary="ai__choice" class="panel__span"></span></p>
 
-        <section class="panel panel__left">
-            <h3 class="game__header game__header--small">Wyniki gry</h3>
-            <p>Twój wybór: <span data-summary="your__choice" class="panel__span"></span></p>
-            <p>Wybór komputera: <span data-summary="ai__choice" class="panel__span"></span></p>
+            </section>
 
-        </section>
+            <section class="panel panel__right">
+                <h3 class="game__header game__header--small">Aktualne wyniki</h3>
+                <p class="panel__paragraph panel__numbers">liczba gier: <span class="panel__span">0</span></p>
+                <p class="panel__paragraph panel__wins">wygranych: <span class="panel__span">0</span></p>
+                <p class="panel__paragraph panel__losses">przegranych: <span class="panel__span">0</span></p>
+                <p class="panel__paragraph panel__draws">remisów: <span class="panel__span">0</span></p>
+            </section>
+        </div>
+
+        <div class="result__wrapper"></div>
         <section class="game__result">
             <h2 class="game__header game__header--midlle"> <span data-summary="who__win" class="panel__span"></span>
             </h2>
             <button class="game__start game__start--result">OK</button>
-        </section>
-        <section class="panel panel__right">
-            <h3 class="game__header game__header--small">Aktualne wyniki</h3>
-            <p class="panel__paragraph panel__numbers">liczba gier: <span class="panel__span">0</span></p>
-            <p class="panel__paragraph panel__wins">wygranych: <span class="panel__span">0</span></p>
-            <p class="panel__paragraph panel__losses">przegranych: <span class="panel__span">0</span></p>
-            <p class="panel__paragraph panel__draws">remisów: <span class="panel__span">0</span></p>
+
         </section>
     </div>
     <script src="game.js"></script>
